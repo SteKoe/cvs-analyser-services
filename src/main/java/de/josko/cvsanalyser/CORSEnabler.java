@@ -1,4 +1,4 @@
-package de.josko.cvsanalyser.service;
+package de.josko.cvsanalyser;
 
 import org.springframework.stereotype.Component;
 

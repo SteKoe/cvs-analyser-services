@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 @RestController
-public class ChangedFilesPerCommitService extends OrientDBService {
+public class ChangedFilesInCombinationService extends OrientDBService {
     private List<Map<String, Object>> result;
 
     @RequestMapping("/changedFilesPerCommit")

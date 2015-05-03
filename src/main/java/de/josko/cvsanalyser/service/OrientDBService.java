@@ -4,7 +4,7 @@ import com.tinkerpop.blueprints.impls.orient.OrientGraphFactory;
 import com.tinkerpop.blueprints.impls.orient.OrientGraphNoTx;
 
 public abstract class OrientDBService {
-    private static final String DB = "remote:localhost/cvslogresults";
+    private static final String DB = "remote:localhost/gbtec";
 
     protected OrientGraphFactory factory;
     protected OrientGraphNoTx orientGraph;

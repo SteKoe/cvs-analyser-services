@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>de.josko.csvanalyser.service</groupId>
-    <artifactId>xy</artifactId>
+    <groupId>de.josko.csvanalyser</groupId>
+    <artifactId>services</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <parent>
@@ -34,16 +34,6 @@
             <groupId>com.orientechnologies</groupId>
             <artifactId>orientdb-graphdb</artifactId>
             <version>2.0-M2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.orientechnologies</groupId>
-            <artifactId>orientdb-graphdb</artifactId>
-            <version>2.0-M2</version>
-        </dependency>
-        <dependency>
-            <groupId>joda-time</groupId>
-            <artifactId>joda-time</artifactId>
-            <version>2.5</version>
         </dependency>
         <dependency>
             <groupId>joda-time</groupId>

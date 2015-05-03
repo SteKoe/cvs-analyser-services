@@ -24,14 +24,13 @@ public class CommitsPerHourService extends OrientDBService {
 
         openConnection();
 
-        String query = "SELECT revision, out_committedOn.date as date FROM Revision ORDER BY date DESC";
+        String query = "SELECT Revision, out('committedOn')[0].Date as Date FROM Revision ORDER BY Date DESC";
         Iterable<Vertex> queryResult = (Iterable<Vertex>) orientGraph.command(new OCommandSQL(query)).execute();
 
         Iterator<Vertex> iterator = queryResult.iterator();
         while (iterator.hasNext()) {
             Vertex next = iterator.next();
-            OTrackedSet dates = next.getProperty("date");
-            String dateTimeString = dates.iterator().next().toString();
+            String dateTimeString = next.getProperty("Date");
             DateTime dateTime = DateTime.parse(dateTimeString);
 
             int hour = dateTime.getHourOfDay();

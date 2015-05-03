@@ -18,18 +18,23 @@ public class CommitterPerFileService extends OrientDBService {
         result = new ArrayList<>();
         statistics = new LinkedHashMap<>();
 
-
         // FIXME: What about SQL injection?!
-        String query = "SELECT *, set(in('contains').in('committed').name).asSet().size() as committer FROM Class WHERE file LIKE '%.java' GROUP BY file ORDER BY committer DESC LIMIT " + limit;
+        String query = "SELECT *, set(in('contains').in('committed').Committer).asSet().size() as Committer " +
+                "FROM Class " +
+                "WHERE Class LIKE '%.java' " +
+                "GROUP BY Class " +
+                "ORDER BY Committer DESC " +
+                "LIMIT " + limit;
+
         Iterable<Vertex> queryResult = (Iterable<Vertex>) orientGraph.command(new OCommandSQL(query)).execute();
 
         Iterator<Vertex> iterator = queryResult.iterator();
         while (iterator.hasNext()) {
             Vertex next = iterator.next();
 
-            int committer = next.getProperty("committer");
+            int committer = next.getProperty("Committer");
 
-            statistics.put(next.getProperty("file").toString(), committer);
+            statistics.put(next.getProperty("Class").toString(), committer);
         }
 
         closeConnection();

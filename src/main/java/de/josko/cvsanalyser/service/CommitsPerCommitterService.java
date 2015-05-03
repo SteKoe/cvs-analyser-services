@@ -23,7 +23,7 @@ public class CommitsPerCommitterService extends OrientDBService {
         statistics = new HashMap<>();
 
 
-        String query = "SELECT committedBy, COUNT(committedBy) as commits FROM (SELECT revision, in('committed')[0].name as committedBy FROM Revision) GROUP BY committedBy";
+        String query = "SELECT committedBy, COUNT(committedBy) as commits FROM (SELECT Revision, in('committed')[0].Committer as committedBy FROM Revision) GROUP BY committedBy";
         Iterable<Vertex> queryResult = (Iterable<Vertex>) orientGraph.command(new OCommandSQL(query)).execute();
 
         Iterator<Vertex> iterator = queryResult.iterator();
