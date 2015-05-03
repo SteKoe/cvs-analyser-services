@@ -16,7 +16,7 @@ import java.util.*;
 public class ChangedFilesInCombinationService extends OrientDBService {
     private List<Map<String, Object>> result;
 
-    @RequestMapping("/changedFilesPerCommit")
+    @RequestMapping("/changedFilesInCombination")
     public
     @ResponseBody
     List<Map<String, Object>> index(@RequestParam(value = "limit", required = false, defaultValue = "10") String limit) {
