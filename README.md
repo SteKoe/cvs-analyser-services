@@ -1,4 +1,4 @@
-# cvs-analyser-services
+# cvs-analyser-services [![Build Status](https://travis-ci.org/SteKoe/cvs-analyser-services.svg?branch=master)](https://travis-ci.org/SteKoe/cvs-analyser-services)
 
 Reads and serves metrics of cvs-analyser as Rest service. 
 
